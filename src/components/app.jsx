@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import giphy from 'giphy-api';
 import SearchBar from './search_bar';
 import Gif from './gif';
 import GifList from './gif_list';
-import giphy from 'giphy-api';
 
 class App extends Component {
   constructor(props) {
@@ -10,20 +10,20 @@ class App extends Component {
 
     this.state = {
       gifs: [],
-      selectedGifId: "fqtxCwUd2t6dCzILMq"
+      selectedGifId: "2HMNoHp2iBQnC"
     };
   }
 
   search = (query) => {
-    giphy('RWKxeBAYUzwNsEWxmRDRr8plikoy1sJm').search({
-      q: query,
-      rating: 'g',
-      limit: 15
-    }, (err, res) => {
-      this.setState({
-        gifs: res.data
+    giphy('tOABssXIdHe3QlBdR0TSMB0aGdH8a6PW')
+      .search({
+        q: query,
+        limit: 10
+      }, (err, res) => {
+        this.setState({
+          gifs: res.data
+        });
       });
-    });
   }
 
   render() {
@@ -42,6 +42,5 @@ class App extends Component {
     );
   }
 }
-
 
 export default App;
