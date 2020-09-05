@@ -5,6 +5,6 @@ const Gif = (props) => {
   return (
     <img src={url} alt="" className="gif" />
   );
-}
+};
 
 export default Gif;

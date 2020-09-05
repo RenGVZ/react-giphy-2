@@ -8,7 +8,7 @@ const GifList = (props) => {
       {gifs.map((gif) => {
         return (
           <div className="gif-list">
-            <Gif id={gif} key={gif} />
+            <Gif id={gif.id} key={gif.id} />
           </div>
         );
       })}

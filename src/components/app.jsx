@@ -9,16 +9,13 @@ class App extends Component {
     super(props);
 
     this.state = {
-      selectedGif: "1o1r3yTBRDpvqz3B29",
-      gifs: [
-        "fnHy7CHeQjUWGZtaUs",
-        "loYhXo7nz8bUSUmmqr"
-      ]
+      gifs: [],
+      selectedGifId: "1o1r3yTBRDpvqz3B29",
     };
   }
 
   updateGif = (e) => {
-    giphy("tOABssXIdHe3QlBdR0TSMB0aGdH8a6PW")
+    giphy("RWKxeBAYUzwNsEWxmRDRr8plikoy1sJm")
       .search({
         q: e,
         limit: 15
@@ -30,12 +27,12 @@ class App extends Component {
   }
 
   render() {
-    const { selectedGif, gifs } = this.state;
+    const { selectedGifId, gifs } = this.state;
     return (
       <div>
         <div className="left-scene">
           <SearchBar updateGif={this.updateGif} />
-          <SelectedGif id={selectedGif} />
+          <SelectedGif id={selectedGifId} />
         </div>
         <div className="right-scene">
           <GifList gifs={gifs} />
