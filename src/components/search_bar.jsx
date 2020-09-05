@@ -1,17 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class SearchBar extends Component {
-
-  handleClick = (event) => {
-    this.props.searchFunction(event.target.value);
-  }
-
-  render() {
-    return (
-      <input type="text" className="form-search form-control"
-      onChange={this.handleClick} />
-    )
-  }
-}
+const SearchBar = (props) => {
+  return (
+    <div className="form-search">
+      <input
+        type="text"
+        placeholder="Start typing..."
+        onChange={e => props.updateGif(e.target.value)}
+      />
+    </div>
+  );
+};
 
 export default SearchBar;
